@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Laravel 10 Task List App</title>
-</head>
-
-<body>
-  <h1>@yield('title')</h1>
-  <div>
-    @yield('content')
-  </div>
-</body>
-
+    <head>
+        <title>Laravel 10 Task List App</title>
+        @yield('style')
+    </head>
+    <body>
+        <h1>@yield('title')</h1>
+        <div>
+            @if (session()->has('success'))
+                <div>{{session('success')}}</div>
+            @endif
+            @yield('content')
+        </div>
+    </body>
 </html>
