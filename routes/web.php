@@ -6,7 +6,7 @@ use App\Models\Task;
 
 Route::get('/tasks', function () {
     return view('index', [
-        'tasks' => Task::latest()->get(),
+        'tasks' => Task::latest()->paginate(10)
     ]);
 })->name('tasks.index');
 
